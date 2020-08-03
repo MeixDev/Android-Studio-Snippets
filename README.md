@@ -23,5 +23,5 @@ Refer to the README.md available in each category subfolder.
 
 ---
 
-#### [GetX](https://flutter.dev)
+#### [GetX](https://github.com/MeixDev/Android-Studio-Snippets/tree/master/getx)
 Snippets and Surround shortcuts useful for Flutter's GetX package.
