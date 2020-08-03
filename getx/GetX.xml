@@ -1,0 +1,88 @@
+<templateSet group="GetX">
+  <template name="getroutes" value="import 'package:get/get.dart';&#10;part of './app_pages.dart';&#10;&#10;abstract class Routes {&#10;  static const INITIAL = '/';&#10;  static const HOME = '/home';&#10;  static const LOGIN = 'login';&#10;  $END$&#10;}" description="Creates App Routes static Strings file" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="getpagesroutes" value="import 'package:get/get.dart';&#10;part './app_routes.dart';&#10;&#10;abstract class AppPages {&#10;  static final pages = [&#10;    GetPage(&#10;      name: Routes.HOME,&#10;      page: () =&gt; HomePage(),&#10;    ),&#10;    $END$&#10;  ];&#10;}" description="Creates App Pages file" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="getpageroute" value="GetPage(&#10;  name: Routes.$ROUTECONST$,&#10;  page: () =&gt; $ROUTENAME$Page(),&#10;)," description="Adds an entry to the App Pages file." toReformat="true" toShortenFQNames="true">
+    <variable name="ROUTECONST" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ROUTENAME" expression="capitalize(camelCase(ROUTECONST))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_STATEMENT" value="false" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="getpageroutebind" value="GetPage(&#10;  name: Routes.$ROUTECONST$,&#10;  page: () =&gt; $ROUTENAME$Page(),&#10;  binding: $ROUTENAME$Binding(),&#10;)," description="Adds an entry to the App Pages file, with Binding" toReformat="true" toShortenFQNames="true">
+    <variable name="ROUTECONST" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ROUTENAME" expression="capitalize(camelCase(ROUTECONST))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_STATEMENT" value="false" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="getfinal" value="final _$NAME$ = ''.obs;&#10;get $NAME$ =&gt; this._$NAME$.value;&#10;set $NAME$(value) =&gt; this._$NAME$.value = value;&#10;$END$" description="Creates a new observable variable with setter &amp; getter." toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_STATEMENT" value="false" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="getfinalrx" value="final Rx&lt;$CLASS$&gt; _$NAME$ = Rx&lt;$CLASS$&gt;($END$);&#10;$CLASS$ get $NAME$ =&gt; this._$NAME$.value;&#10;set $NAME$(value) =&gt; this._$NAME$.value = value;" description="Creates a new observable variable with setter &amp; getter, with Rx clarity" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="camelCase(CLASS)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_STATEMENT" value="false" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="getlazyput" value="Get.lazyPut&lt;$CLASS$&gt;(() =&gt; $CLASS$());" description="Get.lazyPut statement" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="getput" value="$CLASS$ $NAME$ = Get.put($CLASS$());" description="Get.put statement" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="camelCase(CLASS)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="getfind" value="$CLASS$ $NAME$ = Get.find();" description="Get.find statement" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="NAME" expression="camelCase(CLASS)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="getcontroller" value="import 'package:get/get.dart';&#10;&#10;class $CLASS$Controller extends GetxController {&#10;  static $CLASS$Controller to = Get.find();&#10;  $END$&#10;}" description="Creates a new GetXController" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="getbinding" value="import 'package:get/get.dart';&#10;&#10;class $CLASS$Binding extends Bindings {&#10;  @override&#10;  void dependencies() {&#10;    $END$&#10;  }&#10;}" description="Creates a new Get Binding file" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="getrxmodel" value="import 'package:get/get.dart';&#10;&#10;class Rx$CLASS$Model {&#10;  &#10;  final id = 0.obs;&#10;  final name = ''.obs;&#10;}&#10;&#10;class $CLASS$Model {&#10;  $CLASS$Model({id, name});&#10;  &#10;  final rx = Rx$CLASS$Model();&#10;  &#10;  get id =&gt; rx.id.value;&#10;  set id(value) =&gt; rx.id.value = value;&#10;&#10;  get name =&gt; rx.name.value;&#10;  set name(value) =&gt; rx.name.value = value;&#10;  &#10;  $CLASS$Model.fromJson(Map&lt;String, dynamic&gt; json) {&#10;    this.id = json['id'];&#10;    this.name = json['name'];&#10;  }&#10;  &#10;  Map&lt;String, dynamic&gt; toJson() {&#10;    final Map&lt;String, dynamic&gt; data = Map&lt;String, dynamic&gt;();&#10;    data['id'] = this.id;&#10;    data['name'] = this.name;&#10;    return data;&#10;  }&#10;}" description="Creates a new Rx Model" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+</templateSet>

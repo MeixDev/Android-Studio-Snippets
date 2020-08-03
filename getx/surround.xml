@@ -1,0 +1,25 @@
+<templateSet group="surround">
+  <template name="Obx" value="Obx(() =&gt; $SELECTION$)," description="Surround with Obx()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="X" value="GetX&lt;$CONTROLLER$&gt;(&#10;  builder: (ctl) {&#10;    return $SELECTION$$END$&#10;  },&#10;)," description="Surround with GetX" toReformat="false" toShortenFQNames="true">
+    <variable name="CONTROLLER" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="GB" value="GetBuilder&lt;$CLASS$&gt;(&#10;  init: $CLASS$(),&#10;  builder: (ctl) {&#10;    return $SELECTION$$END$&#10;  },&#10;)," description="Surround with GetBuilder" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="Mx" value="MixinBuilder&lt;$CLASS$&gt;(&#10;  init: $CLASS$(),&#10;  builder: (ctl) {&#10;    return $SELECTION$$END$&#10;  },&#10;)," description="Surround with MixinBuilder" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
